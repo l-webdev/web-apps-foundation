@@ -1,0 +1,53 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: monospace, sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 1fr 6fr;
+  margin: 0rem;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: rgb(255, 217, 0);
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.reset-button {
+  justify-self: end;
+  align-self: center;
+  background-color: white;
+}
+
+main {
+  justify-self: center;
+  align-self: center;
+}
+
+.counter {
+  font-size: 8rem;
+}
+
+.heading {
+  font-size: 3rem;
+}
+
+.instruction {
+  font-size: 1rem;
+}
+
+button {
+  font-size: 2rem;
+  background-color: white;
+  border: 3px solid black;
+  cursor: pointer;
+}

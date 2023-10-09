@@ -1,0 +1,29 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+:root {
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.input {
+  font-family: monospace, sans-serif;
+  font-size: 2.75rem;
+  padding: 0.5rem 1 rem;
+  margin-right: 1rem;
+}
+
+.button {
+  font-family: monospace, sans-serif;
+  font-size: 2.75rem;
+  padding: 0.5rem 1 rem;
+}
