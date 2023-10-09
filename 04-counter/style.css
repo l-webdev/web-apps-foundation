@@ -28,13 +28,11 @@ header {
   background-color: white;
 }
 
-main {
-  justify-self: center;
-  align-self: center;
-}
-
 .counter {
   font-size: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .heading {
@@ -43,6 +41,16 @@ main {
 
 .instruction {
   font-size: 1rem;
+}
+
+main {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.gradient {
+  user-select: none;
+  background: linear-gradient(90deg, gold 0%, white 0%);
 }
 
 button {

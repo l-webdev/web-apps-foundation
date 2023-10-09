@@ -1,42 +1,33 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const label = document.querySelector(".counter");
-  const main = document.querySelector("main");
-  const button = document.querySelector(".reset-button button");
+const label = document.querySelector(".counter");
+const main = document.querySelector(".gradient");
+const button = document.querySelector(".reset-button");
 
-  let counter = 0;
-  let colorCounter = 0;
+let counter = 0;
+let colorCounter = 0;
 
-  main.addEventListener("click", increaseCounter);
-  button.addEventListener("click", resetCounter);
-  document.addEventListener("keydown", handleKeyPress);
+main.addEventListener("click", increaseCounter);
+button.addEventListener("click", resetCounter);
+document.addEventListener("keydown", handleKeyPress);
 
-  function increaseCounter() {
-    counter++;
-    label.textContent = counter;
+function increaseCounter() {
+  counter++;
+  label.innerText = counter;
 
-    colorCounter++;
-    if (colorCounter > 100) {
-      colorCounter = 1;
-    }
-    updateBackgroundColor();
+  colorCounter++;
+  if (counter === 101) {
+    colorCounter = 1;
   }
+  main.style.background = `linear-gradient(90deg, gold ${colorCounter}%, white 0%)`;
+}
 
-  function resetCounter() {
-    counter = 0;
-    colorCounter = 0;
-    label.textContent = counter;
-    updateBackgroundColor();
-    button.blur();
-  }
+function resetCounter() {
+  counter = 0;
+  main.style.background = `linear-gradient(90deg, gold 0%, white 0%)`;
+  label.textContent = counter;
+}
 
-  function handleKeyPress(e) {
-    if (["Enter", " "].includes(e.key)) {
-      increaseCounter();
-    }
+function handleKeyPress(e) {
+  if (["Enter", " "].includes(e.key)) {
+    increaseCounter();
   }
-
-  function updateBackgroundColor() {
-    const widthPercentage = Math.min(colorCounter, 100);
-    main.style.setProperty("--counter", widthPercentage + "%");
-  }
-});
+}
